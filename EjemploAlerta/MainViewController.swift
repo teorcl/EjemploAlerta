@@ -29,9 +29,13 @@ class MainViewController: UIViewController {
         alert.addAction(okAction)
         //alert.addAction(cancelAction)
         
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { _ in
+       /* let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { _ in
             print("Acción cancel presionada")
-        } //Estilo cancel me lleva el boton a la izquierda y le pone el texto en negrita
+        } *///Estilo cancel me lleva el boton a la izquierda y le pone el texto en negrita
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .destructive) { _ in
+            print("Acción cancel presionada")
+        } //Esta no tiene prioridad en el orden del boton, pero me pone el texto en color rojo
         
         alert.addAction(cancelAction)
         
