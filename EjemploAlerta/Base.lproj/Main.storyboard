@@ -16,23 +16,39 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="thj-VL-mB4">
-                                <rect key="frame" x="123" y="405" width="144" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="thj-VL-mB4">
+                                <rect key="frame" x="10" y="442.33333333333331" width="370" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Efectuar Accion"/>
                                 <connections>
                                     <action selector="onActionTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="KBj-n0-gR9"/>
                                 </connections>
                             </button>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gUy-zp-XEI">
+                                <rect key="frame" x="10" y="412" width="370" height="20.333333333333314"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="thj-VL-mB4" secondAttribute="trailing" constant="10" id="0OC-2b-4Qx"/>
+                            <constraint firstItem="gUy-zp-XEI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="0Q6-hb-liE"/>
+                            <constraint firstItem="gUy-zp-XEI" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="AoK-Re-RlV"/>
+                            <constraint firstItem="thj-VL-mB4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="DsX-ag-aYN"/>
+                            <constraint firstItem="thj-VL-mB4" firstAttribute="top" secondItem="gUy-zp-XEI" secondAttribute="bottom" constant="10" id="Na9-BM-GEf"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="gUy-zp-XEI" secondAttribute="trailing" constant="10" id="hYA-x9-vEO"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="resultLabel" destination="gUy-zp-XEI" id="DwX-iE-cqr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="54" y="-28"/>
+            <point key="canvasLocation" x="53.846153846153847" y="-28.436018957345969"/>
         </scene>
     </scenes>
     <resources>
