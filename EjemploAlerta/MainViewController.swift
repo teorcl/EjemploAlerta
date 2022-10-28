@@ -25,7 +25,17 @@ class MainViewController: UIViewController {
         let okAction = UIAlertAction(title: "OK", style: .default) { _ in
             //self.resultLabel.text = "Accion ok presionada"
             /*====self.resultLabel.isHidden = false====*/
-            self.showResultMessage(message: Const.messageOk)
+            
+            //self.showResultMessage(message: Const.messageOk)
+            if let textFields = alert.textFields{
+                //cuerpo del optional binding
+                let nameTextField = textFields[0]
+                let name = nameTextField.text ?? ""
+                self.showResultMessage(message: "Su nombre completo es: \(name)")
+            }
+            
+            
+            
         } //Action para cerrar la alerta
         
         //let cancelAction = UIAlertAction(title: "Cancelar Mio", style: .default)
@@ -34,7 +44,7 @@ class MainViewController: UIViewController {
         alert.addAction(okAction)
         //alert.addAction(cancelAction)
         
-        let destructiveAction = UIAlertAction(title: "Destruir", style: .destructive) { _ in
+      /*----  let destructiveAction = UIAlertAction(title: "Destruir", style: .destructive) { _ in
             //self.resultLabel.text = "Accion destruir presionada"
             /*====self.resultLabel.isHidden = false====*/
             self.showResultMessage(message: Const.messageDestructive)
@@ -51,14 +61,18 @@ class MainViewController: UIViewController {
             self.showResultMessage(message: Const.messageCancel)
         } //Esta no tiene prioridad en el orden del boton, pero me pone el texto en color rojo
         
-        alert.addAction(cancelAction)
+        alert.addAction(cancelAction)  ----*/
+        
+        alert.addTextField { textFieldToBeConfigured in
+            textFieldToBeConfigured.placeholder = "Su nombre completo"
+        }
         
         present(alert, animated: true) //Presentación de la alerta
     }
     
     //==================================================
     /**
-     Las lineas 21, 32, 42 son código repetitivo en su lugar es mejor hacer una función para ello
+     Las lineas 27, 39, 50 son código repetitivo en su lugar es mejor hacer una función para ello
      */
     func showResultMessage(message: String){
         resultLabel.text = message
