@@ -23,7 +23,8 @@ class MainViewController: UIViewController {
     
     @IBAction func onActionTapped() {
         //Aqui vamos a crear la alerta
-        let alert = UIAlertController(title: "Titulo de la alerta", message: "Cuerpo de la alerta", preferredStyle: .alert)
+        //=========================================================================================//
+        /*let alert = UIAlertController(title: "Titulo de la alerta", message: "Cuerpo de la alerta", preferredStyle: .alert)
                 
         let okAction = UIAlertAction(title: "OK", style: .default) { _ in
                         
@@ -56,9 +57,33 @@ class MainViewController: UIViewController {
         alert.addTextField { textFieldToBeConfigured in
             textFieldToBeConfigured.placeholder = "Su apellido"
             textFieldToBeConfigured.tag = 9
-        }
+        } */
         
-        present(alert, animated: true) //Presentación de la alerta
+        //====================== UESO DEL STYLE ACTIONSHEET =========================//
+        
+        let alert = UIAlertController(title: "Titulo de la alerta", message: "Cuerpo de la alerta", preferredStyle: .actionSheet)
+                
+        let okAction = UIAlertAction(title: "OK", style: .default) { _ in
+             self.showResultMessage(message: "Acción OK")
+        }
+            
+        alert.addAction(okAction)
+      
+        let destructiveAction = UIAlertAction(title: "Destructive", style: .destructive) { _ in
+             self.showResultMessage(message: "Acción destruir")
+        }
+            
+        alert.addAction(destructiveAction)
+
+        let cancelAction = UIAlertAction(title: "cancel", style: .cancel) { _ in
+             self.showResultMessage(message: "Acción cancelar")
+        }
+            
+        alert.addAction(cancelAction)
+
+        
+        present(alert, animated: true)
+        
     }
     
     //==================================================
